@@ -1,25 +1,25 @@
 const main = async () => {
     const [owner, randomPerson] = await hre.ethers.getSigners();
-    const waveContractFactory = await hre.ethers.getContractFactory("WavePortal"); // compiles contract (hre. is the hardhat)
-    const waveContract = await waveContractFactory.deploy(); // hardhat creates a local Etherium network & refreshes each time
-    await waveContract.deployed(); // deploy to local blockchain
+    const networkingContractFactory = await hre.ethers.getContractFactory("NetworkingPortal"); // compiles contract (hre. is the hardhat)
+    const networkingContract = await networkingContractFactory.deploy(); // hardhat creates a local Etherium network & refreshes each time
+    await networkingContract.deployed(); // deploy to local blockchain
 
 
-    console.log("Contract deployed to:", waveContract.address); 
+    console.log("Contract deployed to:", networkingContract.address); 
     console.log("Contract deployed by:", owner.address);
 
-    let waveCount;
-    waveCount = await waveContract.getTotalWaves();
+    let contactCount;
+    contactCount = await networkingContract.getTotalcontacts();
 
-    let waveTxn = await waveContract.wave(); 
-    await waveTxn.wait();
+    let contactTxn = await networkingContract.contact(); 
+    await contactTxn.wait();
 
-    waveCount = await waveContract.getTotalWaves(); // just to see if the number of waves changed
+    contactCount = await networkingContract.getTotalcontacts(); // just to see if the number of contacts changed
     
-    waveTxn = await waveContract.connect(randomPerson).wave(); // simulate other people hitting our functions
-    await waveTxn.wait();
+    contactTxn = await networkingContract.connect(randomPerson).contact(); // simulate other people hitting our functions
+    await contactTxn.wait();
 
-    waveCount = await waveContract.getTotalWaves();
+    contactCount = await networkingContract.getTotalcontacts();
 };
 
   

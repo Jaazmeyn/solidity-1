@@ -4,20 +4,24 @@ pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
 
-contract WavePortal {
-    uint256 totalWaves; //state variale is stored in contract storage
+contract NetworkingPortal {
+    uint256 totalContacts; //state variale is stored in contract storage
 
     constructor() {
-        console.log("Yo yo, I am a contract and I am smart");
+        console.log("Jooo I'm such a smart contract, I can prove your network :D");
     }
 
-    function wave() public {
-        totalWaves += 1;
-        console.log("%s has waved!", msg.sender); //msg.sender => wallet adress of the person who calles the function
+    function contact() public {
+        totalContacts += 1;
+        console.log("%s has connected!", msg.sender); //msg.sender => wallet adress of the person who calles the function
+        // allConnections.push(msg.sender);
+        // console.log(allConnections, "array of all connections"); //msg.sender => wallet adress of the person who calles the function
+
     }
 
-    function getTotalWaves() public view returns (uint256) {
-        console.log("We have %d total waves!", totalWaves);
-        return totalWaves;
+
+    function getTotalcontacts() public view returns (uint256) {
+        console.log("You have %d total connection/s!", totalContacts);
+        return totalContacts;
     }
 }

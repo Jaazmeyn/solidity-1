@@ -1,7 +1,7 @@
 # solidity-1
 
-mkdir jaz-wave-portal
-cd jaz-wave-portal
+mkdir jaz-contact-portal
+cd jaz-contact-portal
 npm init -y
 npm install --save-dev hardhat
 
