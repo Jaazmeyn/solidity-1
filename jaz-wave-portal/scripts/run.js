@@ -15,7 +15,12 @@ const main = async () => {
     await waveTxn.wait();
 
     waveCount = await waveContract.getTotalWaves(); // just to see if the number of waves changed
-  };
+    
+    waveTxn = await waveContract.connect(randomPerson).wave(); // simulate other people hitting our functions
+    await waveTxn.wait();
+
+    waveCount = await waveContract.getTotalWaves();
+};
 
   
   
