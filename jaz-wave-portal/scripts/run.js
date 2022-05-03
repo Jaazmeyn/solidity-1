@@ -1,9 +1,23 @@
 const main = async () => {
+    const [owner, randomPerson] = await hre.ethers.getSigners();
     const waveContractFactory = await hre.ethers.getContractFactory("WavePortal"); // compiles contract (hre. is the hardhat)
     const waveContract = await waveContractFactory.deploy(); // hardhat creates a local Etherium network & refreshes each time
     await waveContract.deployed(); // deploy to local blockchain
+
+
     console.log("Contract deployed to:", waveContract.address); 
+    console.log("Contract deployed by:", owner.address);
+
+    let waveCount;
+    waveCount = await waveContract.getTotalWaves();
+
+    let waveTxn = await waveContract.wave(); 
+    await waveTxn.wait();
+
+    waveCount = await waveContract.getTotalWaves(); // just to see if the number of waves changed
   };
+
+  
   
   const runMain = async () => {
     try {
