@@ -12,4 +12,14 @@ npx hardhat test
 npx hardhat node
 node scripts/sample-script.js
 npx hardhat help
+
+
+npx hardhat node -> in new terminal keeps the network alive
+
+
+after deploying the contract run in other terminal:
+ npx hardhat run scripts/deploy.js --network localhost
+
+ you will see changes in the other terminal.
+ transaction is includet in a block
 ```

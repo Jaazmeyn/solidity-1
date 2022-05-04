@@ -4,7 +4,6 @@ const main = async () => {
     const networkingContract = await networkingContractFactory.deploy(); // hardhat creates a local Etherium network & refreshes each time
     await networkingContract.deployed(); // deploy to local blockchain
 
-
     console.log("Contract deployed to:", networkingContract.address); 
     console.log("Contract deployed by:", owner.address);
 
@@ -21,8 +20,6 @@ const main = async () => {
 
     contactCount = await networkingContract.getTotalcontacts();
 };
-
-  
   
   const runMain = async () => {
     try {
