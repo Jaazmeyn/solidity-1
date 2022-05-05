@@ -1,5 +1,12 @@
 require("@nomiclabs/hardhat-waffle");
 
+// Import and configure dotenv
+require("dotenv").config();
+require("@nomiclabs/hardhat-ethers");
+
+const API_URL = process.env.STAGING_ALCHEMY_KEY;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -16,6 +23,17 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
+ module.exports = {
   solidity: "0.8.0",
+  networks: {
+    rinkeby: {
+      url: API_URL,
+      accounts: [PRIVATE_KEY, PRIVATE_KEY]
+    },
+    mainnet: {
+      chainId: 1,
+      url: process.env.PROD_ALCHEMY_KEY,
+      accounts: [PRIVATE_KEY, PRIVATE_KEY]
+    },
+  },
 };

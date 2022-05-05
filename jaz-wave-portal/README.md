@@ -5,6 +5,18 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
+
+mkdir jaz-contact-portal
+cd jaz-contact-portal
+npm init -y
+npm install --save-dev hardhat
+
+run:
+npx hardhat
+npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
+
+
+
 npx hardhat accounts -> Ethereum addresses: simulate real users on the blockchain
 npx hardhat compile -> make sure everything is working
 npx hardhat clean
@@ -14,7 +26,7 @@ node scripts/sample-script.js
 npx hardhat help
 
 
-npx hardhat node -> in new terminal keeps the network alive
+npx hardhat node -> in new terminal keeps the network alive locally
 
 
 after deploying the contract run in other terminal:
@@ -22,4 +34,12 @@ after deploying the contract run in other terminal:
 
  you will see changes in the other terminal.
  transaction is includet in a block
+
+ using replit: browser-based IDE 
+
+ using alchemy
+ MyCrypto
+
+ secure 
+ npm install --save dotenv
 ```

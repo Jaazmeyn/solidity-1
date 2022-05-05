@@ -19,7 +19,6 @@ contract NetworkingPortal {
 
     }
 
-
     function getTotalcontacts() public view returns (uint256) {
         console.log("You have %d total connection/s!", totalContacts);
         return totalContacts;
