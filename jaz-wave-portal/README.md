@@ -42,4 +42,7 @@ after deploying the contract run in other terminal:
 
  secure 
  npm install --save dotenv
+
+Deploy with .env variables and see it in etherscan: 
+ npx hardhat run scripts/deploy.js --network rinkeby
 ```
